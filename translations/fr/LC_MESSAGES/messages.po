@@ -1,0 +1,147 @@
+# French translations for GPS Device Tracker.
+# Copyright (C) 2024 GPS Device Tracker
+# This file is distributed under the same license as the GPS Device Tracker project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GPS Device Tracker 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-20 00:00+0000\n"
+"PO-Revision-Date: 2024-01-20 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# Navigation
+msgid "GPS Device Tracker"
+msgstr "Suivi GPS des Appareils"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "Dashboard"
+msgstr "Tableau de Bord"
+
+msgid "Language"
+msgstr "Langue"
+
+# Search Form
+msgid "Device Lookup"
+msgstr "Recherche d'Appareil"
+
+msgid "Enter IMEI Number"
+msgstr "Entrer le Numéro IMEI"
+
+msgid "Please enter a valid IMEI number (15-16 digits)"
+msgstr "Veuillez entrer un numéro IMEI valide (15-16 chiffres)"
+
+msgid "Look up Device"
+msgstr "Rechercher l'Appareil"
+
+msgid "Advanced Search Options"
+msgstr "Options de Recherche Avancée"
+
+msgid "Plate Number"
+msgstr "Numéro d'Immatriculation"
+
+msgid "Owner"
+msgstr "Propriétaire"
+
+# Device Data Display
+msgid "Device Data for IMEI:"
+msgstr "Données de l'Appareil pour l'IMEI :"
+
+msgid "Export CSV"
+msgstr "Exporter en CSV"
+
+msgid "Details"
+msgstr "Détails"
+
+msgid "Location History"
+msgstr "Historique de Localisation"
+
+msgid "No data available for this device."
+msgstr "Aucune donnée disponible pour cet appareil."
+
+msgid "Back to Search"
+msgstr "Retour à la Recherche"
+
+# Table Headers
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Device Model"
+msgstr "Modèle d'Appareil"
+
+msgid "IMEI"
+msgstr "IMEI"
+
+msgid "Sim number"
+msgstr "Numéro de SIM"
+
+msgid "Protocol"
+msgstr "Protocole"
+
+msgid "Additional note"
+msgstr "Note Additionnelle"
+
+# Dashboard
+msgid "Device Statistics"
+msgstr "Statistiques des Appareils"
+
+msgid "Total Devices"
+msgstr "Total des Appareils"
+
+msgid "Active Devices"
+msgstr "Appareils Actifs"
+
+msgid "Offline Devices"
+msgstr "Appareils Hors Ligne"
+
+msgid "Alert Status"
+msgstr "État des Alertes"
+
+msgid "Device Locations"
+msgstr "Emplacements des Appareils"
+
+msgid "Activity Overview"
+msgstr "Aperçu de l'Activité"
+
+# Status Messages
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "API request failed"
+msgstr "La requête API a échoué"
+
+msgid "No data available for this IMEI"
+msgstr "Aucune donnée disponible pour cet IMEI"
+
+msgid "Export failed"
+msgstr "L'exportation a échoué"
+
+# Time and Speed
+msgid "Last Updated"
+msgstr "Dernière Mise à Jour"
+
+msgid "Speed"
+msgstr "Vitesse"
+
+msgid "Speed History"
+msgstr "Historique de Vitesse"
+
+# Recent Searches
+msgid "Recent Searches"
+msgstr "Recherches Récentes"
+
+# Footer
+msgid "GPS Device Tracking System"
+msgstr "Système de Suivi GPS des Appareils"

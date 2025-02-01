@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        {% if error_message %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-triangle"></i> {{ error_message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endif %}
+
+        {% if imei or sim %}
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">
+                    <i class="fas fa-satellite"></i> 
+                    {% if imei %}
+                        Device Data pour IMEI: {{ imei }}
+                    {% else %}
+                        Device Data pour SIM: {{ sim }}
+                    {% endif %}
+                </h2>
+                <div class="btn-group">
+                    <a href="{{ url_for('export_data', imei=imei) if imei else '#' }}" class="btn btn-success">
+                        <i class="fas fa-file-export"></i> Export CSV
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                {% if items %}
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Device Model</th>
+                                <th>IMEI</th>
+                                <th>Sim number</th>
+                                <th>Protocol</th>
+                                <th>Plate Number</th>
+                                <th>Owner</th>
+                                <th>Additional note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                            <tr>
+                                <td>{{ item.id }}</td>
+                                <td>{{ item.device_data.name }}</td>
+                                <td>{{ item.device_data.device_model }}</td>
+                                <td>{{ item.device_data.imei }}</td>
+                                <td>{{ item.device_data.sim_number }}</td>
+                                <td>{{ item.protocol }}</td>
+                                <td>{{ item.device_data.plate_number }}</td>
+                                <td>{{ item.device_data.object_owner }}</td>
+                                <td>{{ item.device_data.additional_notes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% if items[0] %}
+                <script id="device-data" type="application/json">
+                    {
+                        "searchType": "{% if imei %}imei{% else %}sim{% endif %}",
+                        "imei": "{{ items[0].device_data.imei }}",
+                        "sim": "{{ items[0].device_data.sim_number }}",
+                        "name": "{{ items[0].device_data.name }}"
+                    }
+                </script>
+                {% endif %}
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> No data available for this device.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="text-center">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Search
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center mb-0"><i class="fas fa-search"></i> Device Lookup</h2>
+            </div>
+            <div class="card-body">
+                <form id="searchForm" action="{{ url_for('display_data') }}" method="POST">
+                    <div class="nav nav-tabs mb-3" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#imei-search" type="button">
+                            Recherche par IMEI
+                        </button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sim-search" type="button">
+                            Recherche par SIM
+                        </button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="imei-search">
+                            <div class="mb-3">
+                                <label for="imei" class="form-label">Numéro IMEI</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-barcode"></i></span>
+                                    <input type="text" class="form-control" id="imei" name="imei" 
+                                           placeholder="Entrer le numéro IMEI"
+                                           pattern="[0-9]{15,16}" 
+                                           title="Veuillez entrer un numéro IMEI valide (15-16 chiffres)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="sim-search">
+                            <div class="mb-3">
+                                <label for="sim" class="form-label">Numéro SIM</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-sim-card"></i></span>
+                                    <input type="text" class="form-control" id="sim" name="sim" 
+                                           placeholder="Entrer le numéro SIM">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Rechercher
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h3 class="mb-0"><i class="fas fa-history"></i> Recherches Récentes</h3>
+            </div>
+            <div class="card-body">
+                <div id="searchHistory" class="list-group">
+                    <!-- Search history will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

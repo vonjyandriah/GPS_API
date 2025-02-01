@@ -1,0 +1,109 @@
+/* Base styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand i {
+    margin-right: 0.5rem;
+}
+
+/* Cards */
+.card {
+    border: 1px solid var(--bs-border-color);
+    background-color: var(--bs-dark);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+/* Tables */
+.table {
+    margin-bottom: 0;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Alerts */
+.alert {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.alert.fade {
+    opacity: 0;
+}
+
+/* Dashboard */
+.stat-card {
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--bs-primary);
+}
+
+/* Maps */
+#map, #dashboardMap {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Forms */
+.input-group-text {
+    background-color: var(--bs-dark);
+    border-color: var(--bs-border-color);
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    background-color: var(--bs-dark);
+    border-top: 1px solid var(--bs-border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animations */
+.fade-enter-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
